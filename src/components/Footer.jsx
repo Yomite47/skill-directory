@@ -4,7 +4,6 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-content">
           <p>Skill Learning Directory • Find the best resources for any skill</p>
-          <p className="note">Edit content in src/data/skills.json</p>
         </div>
 
         <div className="socials" aria-label="Contact and social links">
