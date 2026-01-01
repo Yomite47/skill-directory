@@ -1,0 +1,563 @@
+{
+  "sectors": [
+    {
+      "slug": "ai-automation",
+      "title": "AI & AI AUTOMATION",
+      "intro": "Learn AI tools, automation workflows, and prompt engineering to boost productivity.",
+      "resourcesHeading": "Top AI Channels & Tutorials",
+      "resourcesIntro": "These are some of the best YouTube channels and tutorial videos for learning AI and AI automation. Each entry includes a concise description and a direct link — click Open to explore.",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "AI Explained",
+          "link": "https://www.youtube.com/@aiexplained-official",
+          "description": "Easy explanations of AI concepts.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "AI Researcher",
+          "link": "https://twitter.com/ylecun",
+          "description": "AI research updates and commentary.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Alek: AI Side Hustles",
+          "link": "https://www.youtube.com/channel/UCZv_19T3Yuk8k0RZRGNqgow",
+          "description": "Ideas and examples for AI side hustles.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Akshay Pachaar",
+          "link": "https://x.com/akshay_pachaar",
+          "description": "Simplifies LLMs, AI agents, and RAG through threads and learning.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "All About AI",
+          "link": "https://www.youtube.com/@AllAboutAI",
+          "description": "Practical guides and AI agent demos.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "DeepLearning.AI (Andrew Ng)",
+          "link": "https://www.youtube.com/c/deeplearningai",
+          "description": "Courses and tutorials on deep learning.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "How to Build AI Agents with n8n in 2025! (Full Course)",
+          "link": "https://www.youtube.com/watch?v=geR9PeCuHK4",
+          "description": "No-code course for building AI agents with n8n.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Himanshu Kumar",
+          "link": "https://x.com/codewithimanshu",
+          "description": "AI trends, tutorials, prompt guides, and learning roadmaps.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "twitter",
+          "title": "Jerrod Lew",
+          "link": "https://x.com/jerrod_lew",
+          "description": "Hands-on tutorials, prompt engineering guides, and practical AI skills.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Matt Wolfe",
+          "link": "https://www.youtube.com/@mreflow",
+          "description": "Tool walkthroughs and automation builds.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Murtaza's Workshop",
+          "link": "https://www.youtube.com/channel/UCYUjYU5FveRAscQ8V21w81A",
+          "description": "Robotics and hands-on AI project tutorials.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "n8n (official)",
+          "link": "https://www.youtube.com/@n8n-io",
+          "description": "Official n8n tutorials and community videos.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Prompt Engineering | Generative AI | Prompt Engineering Tutorial | Simplilearn",
+          "link": "https://youtu.be/DvhFcIRRXyI?si=-d57Kamoekw70NBy",
+          "description": "Intro to prompt engineering with clear examples for beginners.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Ramakrishna",
+          "link": "https://x.com/techwith_ram",
+          "description": "Deep dives into LLMs, math foundations, and accessible AI education.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Sentdex (Harrison Chase)",
+          "link": "https://www.youtube.com/@sentdex",
+          "description": "Hands-on coding tutorials and AI projects.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Skill Leap AI",
+          "link": "https://www.youtube.com/@SkillLeapAI",
+          "description": "Step-by-step AI workflows for productivity.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Two Minute Papers",
+          "link": "https://www.youtube.com/c/KárolyZsolnai",
+          "description": "Short explainers on recent AI research.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "You NEED to Learn AI Automation Now (Full Beginners Guide 2025)",
+          "link": "https://www.youtube.com/watch?v=_H5Ic1rClDk",
+          "description": "Beginner guide to AI automation tools.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Vitto Rivabella",
+          "link": "https://x.com/VittoStack",
+          "description": "Open-source AI tools, RAG, fine-tuning, and learning paths for builders.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "free",
+          "title": "Introduction to Generative AI",
+          "link": "https://skills.google/paths/118",
+          "description": "Google's introductory path to Generative AI."
+        },
+        {
+          "type": "free",
+          "title": "AI and Algorithms",
+          "link": "https://ocw.mit.edu/courses/res-tll-008-social-and-ethical-responsibilities-of-computing-serc/pages/ai-algorithms/",
+          "description": "MIT OpenCourseWare on AI algorithms and ethics."
+        },
+        {
+          "type": "free",
+          "title": "Machine Learning Crash Course",
+          "link": "https://developers.google.com/machine-learning/crash-course",
+          "description": "Google's fast-paced, practical introduction to machine learning."
+        },
+        {
+          "type": "free",
+          "title": "CS50’s Introduction to AI with Python",
+          "link": "https://cs50.harvard.edu/ai/",
+          "description": "Harvard's introduction to artificial intelligence with Python."
+        },
+        {
+          "type": "free",
+          "title": "Introduction to Deep Learning",
+          "link": "http://introtodeeplearning.com",
+          "description": "MIT's introductory course on deep learning methods."
+        },
+        {
+          "type": "free",
+          "title": "Foundation Models & Generative AI",
+          "link": "https://youtube.com/watch?v=y1fGlAECNFM",
+          "description": "A comprehensive overview of foundation models."
+        },
+        {
+          "type": "free",
+          "title": "ChatGPT Prompt Engineering for Developers",
+          "link": "https://deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+          "description": "Learn how to use LLMs to build powerful applications."
+        },
+        {
+          "type": "paid",
+          "title": "AI for Everyone",
+          "link": "https://coursera.org/learn/ai-for-everyone",
+          "description": "AI for Everyone by DeepLearning.AI on Coursera."
+        },
+        {
+          "type": "paid",
+          "title": "Generative AI for Everyone",
+          "link": "https://coursera.org/learn/generative-ai-for-everyone",
+          "description": "Generative AI for Everyone by DeepLearning.AI on Coursera."
+        },
+        {
+          "type": "paid",
+          "title": "Building RAG Agents with LLMs",
+          "link": "https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-FX-15+V1&ncid",
+          "description": "NVIDIA's course on building Retrieval Augmented Generation agents."
+        },
+        {
+          "type": "free",
+          "title": "Generative AI Explained",
+          "link": "https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-FX-07+V1",
+          "description": "NVIDIA's guide to generative AI concepts and applications."
+        },
+        {
+          "type": "free",
+          "title": "Vibe Coding 101 with Replit",
+          "link": "https://deeplearning.ai/short-courses/vibe-coding-101-with-replit/",
+          "description": "Learn to build apps using AI assistance with Replit."
+        },
+        {
+          "type": "free",
+          "title": "Claude code in action",
+          "link": "https://anthropic.skilljar.com/claude-code-in-action",
+          "description": "Official Anthropic course on using Claude for coding tasks."
+        },
+        {
+          "type": "free",
+          "title": "Microsoft’s Generative AI for beginners",
+          "link": "https://microsoft.github.io/generative-ai-for-beginners/#/",
+          "description": "Comprehensive 18-lesson course by Microsoft Cloud Advocates."
+        },
+        {
+          "type": "free",
+          "title": "Claude Code: A Highly Agentic Coding Assistant",
+          "link": "https://deeplearning.ai/short-courses/claude-code-a-highly-agentic-coding-assistant/",
+          "description": "Deep dive into using Claude as an autonomous coding agent."
+        },
+        {
+          "type": "free",
+          "title": "Introduction to Computer Science (CS50)",
+          "link": "https://edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science",
+          "description": "Harvard's legendary introduction to the intellectual enterprises of computer science."
+        },
+        {
+          "type": "free",
+          "title": "Harvard’s Mobile App Development Course",
+          "link": "https://edx.org/learn/react-native/harvard-university-cs50-s-mobile-app-development-with-react-native",
+          "description": "Learn mobile app development with React Native from Harvard."
+        },
+        {
+          "type": "free",
+          "title": "Free ChatGPT Courses",
+          "link": "https://academy.openai.com",
+          "description": "Official educational resources from OpenAI Academy."
+        },
+        {
+          "type": "free",
+          "title": "Collaborative Writing and Coding with OpenAI Canvas",
+          "link": "https://deeplearning.ai/short-courses/collaborative-writing-and-coding-with-openai-canvas/",
+          "description": "Master the OpenAI Canvas interface for writing and coding."
+        }
+      ]
+    },
+    {
+      "slug": "video-editing",
+      "title": "VIDEO EDITING",
+      "intro": "From quick edits to cinematic color grading - learn tools and workflows.",
+      "resourcesHeading": "Top Video Editing Resources",
+      "resourcesIntro": "Learn editing fundamentals, color grading, and creative workflows from industry experts and official tutorials.",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "Peter McKinnon",
+          "link": "https://www.youtube.com/user/petermckinnon24",
+          "description": "Editing, camera, and creative workflow tutorials.",
+          "logo": "▶️"
+        },
+        {
+          "type": "website",
+          "title": "Premiere Pro Tutorials",
+          "link": "https://helpx.adobe.com/premiere-pro/tutorials.html",
+          "description": "Official Adobe guides and walkthroughs."
+        },
+        {
+          "type": "youtube",
+          "title": "Premiere Gal",
+          "link": "https://www.youtube.com/c/PremiereGal",
+          "description": "Step-by-step Premiere Pro tutorials and ready-to-use templates.",
+          "logo": "▶️"
+        }
+      ,
+        {
+          "type": "youtube",
+          "title": "Ben Claremont",
+          "link": "https://www.youtube.com/@BenClaremont",
+          "description": "Comprehensive CapCut tutorials for desktop and mobile — from basic edits to advanced effects, shortcuts, and full project workflows for Shorts, Reels, and long-form content.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Justin Odisho",
+          "link": "https://www.youtube.com/@JustinOdisho",
+          "description": "Progressive tutorials from basics to advanced transitions, effects, sound design, and Premiere Pro + After Effects integrations for polished video production.",
+          "logo": "▶️"
+        }
+      ]
+    },
+    {
+      "slug": "animation",
+      "title": "ANIMATION",
+      "intro": "Master motion principles, 3D modeling, visual effects, and cinematic storytelling. Learn from industry professionals across After Effects, Blender, and advanced animation techniques.",
+      "resourcesHeading": "Featured Animation Creators & Resources",
+      "resourcesIntro": "Discover the best animation, VFX, and 3D modeling creators. From beginner tutorials to advanced techniques, these resources will help you master your craft.",
+      "resources": [
+        {
+          "type": "twitter",
+          "title": "alexxgrigg",
+          "link": "https://x.com/alexxgrigg",
+          "description": "Fundamentals of animation with hands-on step-by-step lessons for character and motion principles.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Blender Guru",
+          "link": "https://www.youtube.com/@blenderguru",
+          "description": "Famous for the Donut Tutorial; teaches modeling, texturing, lighting, and rendering step-by-step.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Blender Secrets",
+          "link": "https://www.youtube.com/@BlenderSecrets",
+          "description": "Daily bite-sized tips, tricks, and shortcuts to boost workflow efficiency.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "C Bailey Film",
+          "link": "https://www.youtube.com/@CBaileyFilm",
+          "description": "Filmmaking and VFX: cinematic lighting, camera work, compositing, and film production integration.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "CG Cookie",
+          "link": "https://www.youtube.com/@cg_cookie",
+          "description": "Professional-level courses covering the full Blender pipeline from modeling to production.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "CG Matter",
+          "link": "https://www.youtube.com/@CGMatter",
+          "description": "Technical deep dives into geometry nodes, procedural generation, and advanced shading.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Erindale",
+          "link": "https://www.youtube.com/@Erindale",
+          "description": "Geometry nodes expert; procedural modeling, parametric design, and non-destructive workflows.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Evan Abrams",
+          "link": "https://www.youtube.com/user/ECAbrams",
+          "description": "After Effects tutorials, motion design, and visual effects techniques.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Ezboy_animation",
+          "link": "https://x.com/Ezboy_animation",
+          "description": "After Effects tutorials: scribble text effects, prism bokeh, motion graphics, and downloadable resources.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "twitter",
+          "title": "Gonzalo_Anim",
+          "link": "https://x.com/Gonzalo_Anim",
+          "description": "3D game animation tips for platforming, Unreal Engine, Maya, Blender with character movement breakdowns.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Grant Abbitt",
+          "link": "https://www.youtube.com/@grabbitt",
+          "description": "Calm teaching style; beginner-to-intermediate modeling, game assets, characters, and sculpting.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Ian Hubert",
+          "link": "https://www.youtube.com/@IanHubert2",
+          "description": "Quick and clever techniques for environments, VFX, compositing, and high-impact results.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "pierrick_picaut",
+          "link": "https://x.com/pierrick_picaut",
+          "description": "Blender rigging, weight painting, and 3D animation techniques for complex meshes and professional workflows.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "Polyfjord",
+          "link": "https://www.youtube.com/@Polyfjord",
+          "description": "Creative tutorials on procedural modeling, advanced shaders, animations, and artistic projects.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Ryan King Art",
+          "link": "https://www.youtube.com/@RyanKingArt",
+          "description": "Procedural shaders, realistic materials, texturing techniques, and artistic principles.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Tlauz_ani",
+          "link": "https://x.com/Tlauz_ani",
+          "description": "Hand-drawn animation: face angles, wire mask methods, digital frame-by-frame in Clip Studio Paint, real-time process videos.",
+          "logo": "𝕏"
+        }
+      ]
+    },
+    {
+      "slug": "technical-analysis",
+      "title": "TECHNICAL ANALYSIS",
+      "intro": "Charts, indicators, and frameworks for analyzing markets and data visually.",
+      "resourcesHeading": "Market Analysis Resources",
+      "resourcesIntro": "Access tools, tutorials, and expert insights for technical analysis and market research.",
+      "resources": [
+        {
+          "type": "youtube",
+          "title": "The Chart Guys",
+          "link": "https://www.youtube.com/c/TheChartGuys",
+          "description": "Technical analysis tutorials and market walkthroughs.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Technical Analyst",
+          "link": "https://twitter.com/alphatrends",
+          "description": "Market charts, setups and commentary.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "youtube",
+          "title": "THE Trading Geek",
+          "link": "https://youtube.com/@thetradinggeek?si=FZ2r95ZWFSjVSj_a",
+          "description": "Easy-to-understand technical analysis fundamentals and real-world chart examples for traders of all levels.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "CryptoCred",
+          "link": "https://youtube.com/@cryptocred?si=qWSXvqEiDkk6_-lt",
+          "description": "Technical analysis and trading strategies focused on cryptocurrency with clear chart breakdowns and pattern recognition.",
+          "logo": "▶️"
+        },
+        {
+          "type": "twitter",
+          "title": "Pentosh1",
+          "link": "https://x.com/Pentosh1",
+          "description": "Pseudonymous trader delivering bold yet insightful TA on Bitcoin, Ethereum, and altcoins with detailed chart setups, macro overlays, and cycle analysis.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "twitter",
+          "title": "TechCharts",
+          "link": "https://x.com/TechCharts",
+          "description": "Aksel Kibar—Classical chartist specializing in technical patterns, breakouts, and historical parallels across crypto markets for objective TA learning.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "twitter",
+          "title": "intocryptoverse",
+          "link": "https://x.com/intocryptoverse",
+          "description": "Benjamin Cowen—Data-driven TA focused on market cycles, Bitcoin dominance, and risk metrics; teaches probabilistic thinking about price movements.",
+          "logo": "𝕏"
+        },
+        {
+          "type": "twitter",
+          "title": "BigCheds",
+          "link": "https://x.com/BigCheds",
+          "description": "Veteran chartist providing clear, classical TA on Bitcoin and majors with trend analysis and key levels; straightforward chart reviews.",
+          "logo": "𝕏"
+        }
+      ]
+    },
+    {
+      "slug": "content-creation-writing",
+      "title": "CONTENT CREATION & WRITING",
+      "intro": "Master the art of storytelling, copywriting, and content strategy for the digital age.",
+      "resourcesHeading": "Top Writing Tools & Guides",
+      "resourcesIntro": "Essential tools, courses, and channels to help you write better copy, tell compelling stories, and build an audience.",
+      "resources": [
+        {
+          "type": "free",
+          "title": "HubSpot Content Marketing",
+          "link": "https://academy.hubspot.com/courses/content-marketing",
+          "description": "The industry-standard free certification for content marketing strategy."
+        },
+        {
+          "type": "website",
+          "title": "Copyblogger",
+          "link": "https://copyblogger.com",
+          "description": "One of the most influential content marketing and copywriting blogs on the web."
+        },
+        {
+          "type": "youtube",
+          "title": "The Creative Penn",
+          "link": "https://www.youtube.com/@thecreativepenn",
+          "description": "Joanna Penn covers the business of being a writer, self-publishing, and marketing.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Quotidian Writer",
+          "link": "https://www.youtube.com/@QuotidianWriter",
+          "description": "Diane Callahan's practical advice on sentence structure, pacing, and storytelling mechanics.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Brandon Sanderson's Lectures",
+          "link": "https://www.youtube.com/playlist?list=PLSH_xM-KC3Zv-79sVZTTj-YA6IAqh8qeQ",
+          "description": "World-class university lectures on sci-fi/fantasy writing and plot structure.",
+          "logo": "▶️"
+        },
+        {
+          "type": "youtube",
+          "title": "Hello Future Me",
+          "link": "https://www.youtube.com/@HelloFutureMe",
+          "description": "Deep dives into worldbuilding, psychology, and narrative consistency.",
+          "logo": "▶️"
+        },
+        {
+          "type": "website",
+          "title": "Hemingway Editor",
+          "link": "https://hemingwayapp.com",
+          "description": "A tool that highlights complex sentences and common errors to make your writing bold and clear."
+        },
+        {
+          "type": "website",
+          "title": "AnswerThePublic",
+          "link": "https://answerthepublic.com",
+          "description": "Visualizes search questions to help you generate endless content ideas."
+        },
+        {
+          "type": "website",
+          "title": "VeryGoodCopy",
+          "link": "https://www.verygoodcopy.com",
+          "description": "Eddie Shleyner's micro-essays on copywriting and creativity."
+        },
+        {
+          "type": "free",
+          "title": "Google Digital Garage",
+          "link": "https://skillshop.exceedlms.com/student/collection/648385-digital-marketing",
+          "description": "Fundamentals of promoting your business with online content."
+        }
+      ]
+    }
+  ]
+}
