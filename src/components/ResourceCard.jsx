@@ -10,18 +10,17 @@ function getTypeIcon(type) {
 
 export default function ResourceCard({ title, link, description, type, logo }) {
   return (
-    <div className="resource-card">
-      <div>
-        <div className="card-icon" style={type === 'youtube' ? { color: '#ff0000' } : {}}>
-          {logo || getTypeIcon(type)}
-        </div>
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <a 
+      href={link} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="resource-card"
+    >
+      <div className="card-icon" style={type === 'youtube' ? { color: '#ff0000' } : {}}>
+        {logo || getTypeIcon(type)}
       </div>
-
-      <div className="card-actions">
-        <a href={link} target="_blank" rel="noopener noreferrer" className="btn">Open</a>
-      </div>
-    </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </a>
   );
 }

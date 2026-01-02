@@ -2,8 +2,8 @@
   "sectors": [
     {
       "slug": "ai-automation",
-      "title": "AI & AI AUTOMATION",
-      "intro": "Learn AI tools, automation workflows, and prompt engineering to boost productivity.",
+      "title": "AI & Automation",
+      "intro": "Discover AI tools, automation workflows, and prompt engineering. Learn practical techniques to streamline tasks and boost productivity.",
       "resourcesHeading": "Top AI Channels & Tutorials",
       "resourcesIntro": "These are some of the best YouTube channels and tutorial videos for learning AI and AI automation. Each entry includes a concise description and a direct link — click Open to explore.",
       "resources": [
@@ -258,8 +258,8 @@
     },
     {
       "slug": "video-editing",
-      "title": "VIDEO EDITING",
-      "intro": "From quick edits to cinematic color grading - learn tools and workflows.",
+      "title": "Video Editing",
+      "intro": "Master video editing from basic cuts to advanced color grading. Learn industry tools like Premiere Pro, DaVinci Resolve, and professional workflows.",
       "resourcesHeading": "Top Video Editing Resources",
       "resourcesIntro": "Learn editing fundamentals, color grading, and creative workflows from industry experts and official tutorials.",
       "resources": [
@@ -282,8 +282,7 @@
           "link": "https://www.youtube.com/c/PremiereGal",
           "description": "Step-by-step Premiere Pro tutorials and ready-to-use templates.",
           "logo": "▶️"
-        }
-      ,
+        },
         {
           "type": "youtube",
           "title": "Ben Claremont",
@@ -302,8 +301,8 @@
     },
     {
       "slug": "animation",
-      "title": "ANIMATION",
-      "intro": "Master motion principles, 3D modeling, visual effects, and cinematic storytelling. Learn from industry professionals across After Effects, Blender, and advanced animation techniques.",
+      "title": "Animation",
+      "intro": "Master animation fundamentals, 3D modeling, and visual effects. Learn tools like After Effects and Blender to create cinematic motion with professional techniques.",
       "resourcesHeading": "Featured Animation Creators & Resources",
       "resourcesIntro": "Discover the best animation, VFX, and 3D modeling creators. From beginner tutorials to advanced techniques, these resources will help you master your craft.",
       "resources": [
@@ -423,8 +422,8 @@
     },
     {
       "slug": "technical-analysis",
-      "title": "TECHNICAL ANALYSIS",
-      "intro": "Charts, indicators, and frameworks for analyzing markets and data visually.",
+      "title": "Technical Analysis",
+      "intro": "Learn chart patterns, indicators, and visual analysis frameworks. Discover techniques to make data-driven decisions and improve market insights.",
       "resourcesHeading": "Market Analysis Resources",
       "resourcesIntro": "Access tools, tutorials, and expert insights for technical analysis and market research.",
       "resources": [
@@ -488,8 +487,8 @@
     },
     {
       "slug": "content-creation-writing",
-      "title": "CONTENT CREATION & WRITING",
-      "intro": "Master the art of storytelling, copywriting, and content strategy for the digital age.",
+      "title": "Content Creation & Writing",
+      "intro": "Learn storytelling, copywriting, and content strategy. Use proven techniques and tools to craft engaging content and grow your audience.",
       "resourcesHeading": "Top Writing Tools & Guides",
       "resourcesIntro": "Essential tools, courses, and channels to help you write better copy, tell compelling stories, and build an audience.",
       "resources": [
