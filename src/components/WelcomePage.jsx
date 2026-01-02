@@ -20,9 +20,6 @@ export default function WelcomePage() {
             <Link href="/auth/signup" className="btn btn-primary btn-lg">
               Get Started
             </Link>
-            <Link href="/auth/login" className="btn btn-secondary btn-lg">
-              Member Login
-            </Link>
           </div>
         </div>
         
