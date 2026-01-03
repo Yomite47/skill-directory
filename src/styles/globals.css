@@ -673,7 +673,7 @@ body {
     gap: 1rem;
   }
   
-  .features-grid, .categories-grid, .reasons-grid {
+  .features-grid, .reasons-grid {
     grid-template-columns: 1fr;
   }
   

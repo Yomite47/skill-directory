@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import sectorsData from '../data/sectors.json';
 
 export default function Home() {
   const router = useRouter();
