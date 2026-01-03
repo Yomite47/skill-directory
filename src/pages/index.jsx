@@ -1,88 +1,14 @@
 import Head from 'next/head';
-import { useEffect, useMemo, useState } from 'react';
-import { useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Header from '../components/Header';
-import SkillCard from '../components/SkillCard';
-import SectorCard from '../components/SectorCard';
-import AnimatedCharacter from '../components/AnimatedCharacter';
 import Footer from '../components/Footer';
-import ResourceCard from '../components/ResourceCard';
-import WelcomePage from '../components/WelcomePage';
-import skillsData from '../data/skills.json';
 import sectorsData from '../data/sectors.json';
 
 export default function Home() {
-  const { data: session, status } = useSession();
-  const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState('all');
+  const router = useRouter();
   const [showTop, setShowTop] = useState(false);
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState('idle');
-
-  const popularSlugs = useMemo(() => ['ai-automation', 'video-editing', 'animation'], []);
-  const techSlugs = useMemo(() => ['ai-automation', 'technical-analysis'], []);
-  const creativeSlugs = useMemo(() => ['video-editing', 'animation', 'content-creation-writing'], []);
-
-  const allItems = useMemo(() => {
-    const skills = (skillsData.skills || []).map(s => ({
-      type: 'skill',
-      slug: s.slug,
-      title: s.skillTitle,
-      intro: s.skillIntro
-    }));
-    const sectors = (sectorsData.sectors || []).map(s => ({
-      type: 'sector',
-      slug: s.slug,
-      title: s.title,
-      intro: s.intro
-    }));
-    return [...skills, ...sectors];
-  }, []);
-
-  const filteredItems = useMemo(() => {
-    let items = allItems;
-    if (filter === 'popular') items = items.filter(i => popularSlugs.includes(i.slug));
-    if (filter === 'tech') items = items.filter(i => techSlugs.includes(i.slug));
-    if (filter === 'creative') items = items.filter(i => creativeSlugs.includes(i.slug));
-    if (query.trim()) {
-      const q = query.trim().toLowerCase();
-      items = items.filter(i => i.title.toLowerCase().includes(q) || (i.intro || '').toLowerCase().includes(q));
-    }
-    return items;
-  }, [allItems, filter, query, popularSlugs, techSlugs, creativeSlugs]);
-
-  const featuredItems = useMemo(() => {
-    return allItems.filter(i => popularSlugs.includes(i.slug)).slice(0, 4);
-  }, [allItems, popularSlugs]);
-
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (!email || !email.includes('@')) {
-      setSubscribeStatus('error');
-      return;
-    }
-    setSubscribeStatus('loading');
-    
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (res.ok) {
-        setSubscribeStatus('success');
-        setEmail('');
-      } else {
-        setSubscribeStatus('error');
-      }
-    } catch (error) {
-      console.error('Failed to subscribe:', error);
-      setSubscribeStatus('error');
-    }
-  };
 
   useEffect(() => {
     function onScroll() {
@@ -93,161 +19,126 @@ export default function Home() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  if (status === 'loading') {
-    return <div style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Loading...</div>;
-  }
-
-  if (!session) {
-    return <WelcomePage />;
-  }
-
   return (
-    <>
+    <div className="page-wrapper">
       <Head>
-        <title>Dashboard - Skill Directory</title>
-        <meta name="description" content="Find the best resources to learn any skill" />
+        <title>Skill Directory - Discover the Best Resources</title>
+        <meta name="description" content="A curated directory of videos, blogs, and PDFs, organized so you can focus on learning instead of searching everywhere." />
       </Head>
-      
+
       <Header />
       
-      <main className="container">
+      <main>
+        {/* 1. Hero Section */}
         <section className="hero">
-          <AnimatedCharacter />
-          <h1>Master Any Skill with Expert-Curated Resources</h1>
+          <h1>Discover the Best Resources to <span className="highlight">Learn Any Skill</span></h1>
           <p className="subtitle">
-            Find the best courses, guides, and learning paths for every skill
+            A curated directory of videos, blogs, and PDFs, organized so you can focus on learning instead of searching everywhere.
           </p>
+          
           <div className="hero-actions">
-            <a href="#skills" className="btn btn-primary">Browse All Skills</a>
-          </div>
-        </section>
-        
-
-
-        <section id="skills" className="skills-grid">
-          <div className="skills-controls">
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search for a specific skill..."
-              id="skills-search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <div className="filter-buttons" role="tablist" aria-label="Filter skills">
-              <button
-                className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-                onClick={() => setFilter('all')}
-              >
-                All Skills
-              </button>
-              <button
-                className={`filter-btn ${filter === 'popular' ? 'active' : ''}`}
-                onClick={() => setFilter('popular')}
-              >
-                Popular
-              </button>
-              <button
-                className={`filter-btn ${filter === 'tech' ? 'active' : ''}`}
-                onClick={() => setFilter('tech')}
-              >
-                Tech
-              </button>
-              <button
-                className={`filter-btn ${filter === 'creative' ? 'active' : ''}`}
-                onClick={() => setFilter('creative')}
-              >
-                Creative
-              </button>
-            </div>
-            <div className="skills-count">
-              Showing {filteredItems.length} of 50+ skills
-            </div>
-          </div>
-          <div className="grid">
-            {filteredItems.map((item) => {
-              if (item.type === 'skill') {
-                const skill = {
-                  slug: item.slug,
-                  skillTitle: item.title,
-                  skillIntro: item.intro
-                };
-                return <SkillCard key={`skill-${item.slug}`} skill={skill} />;
-              }
-              const sector = {
-                slug: item.slug,
-                title: item.title,
-                intro: item.intro
-              };
-              return <SectorCard key={`sector-${item.slug}`} sector={sector} />;
-            })}
+            <Link href="/directory" className="btn btn-primary">
+              Browse Skills
+            </Link>
           </div>
         </section>
 
-        <section className="skills-grid">
-          <h2>This week's top recommended course</h2>
-          <div className="grid">
-            <ResourceCard
-              title="Machine Learning Crash Course"
-              link="https://developers.google.com/machine-learning/crash-course"
-              description="Google's fast-paced, practical introduction to machine learning."
-              type="free"
-            />
-          </div>
-        </section>
-
-        <section className="skills-grid">
-          <h2>What learners say about Skill Directory</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <p>"Found exactly what I needed without wasting hours. The curation is spot on."</p>
-              <div className="testimonial-meta">— Ada, Product Designer</div>
-            </div>
-            <div className="testimonial-card">
-              <p>"The filters and featured picks helped me start fast. Highly recommend."</p>
-              <div className="testimonial-meta">— Ben, Content Creator</div>
-            </div>
-            <div className="testimonial-card">
-              <p>"Clear paths and quality resources. I leveled up my skills in weeks."</p>
-              <div className="testimonial-meta">— Tayo, Developer</div>
+        {/* 2. Problem to Solution Section */}
+        <section className="problem-solution">
+          <div className="container">
+            <div className="problem-solution-content">
+              <div className="problem-solution-text">
+                <h2>Stop Searching, <span className="highlight">Start Learning</span></h2>
+                <p>
+                  Learning a new skill often feels overwhelming. You spend hours filtering through low-quality tutorials, outdated articles, and confusing roadmaps.
+                </p>
+                <p>
+                  <strong>Skill Directory solves this.</strong> We collect and curate high-quality learning materials in one place, so you can skip the noise and get straight to mastering your next skill.
+                </p>
+              </div>
+              <div className="problem-solution-image">
+                <div className="solution-card">
+                  <div className="check-item">✅ Curated Content</div>
+                  <div className="check-item">✅ No Fluff</div>
+                  <div className="check-item">✅ Direct Links</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="skills-grid">
-          <h2>Get weekly skill recommendations</h2>
-          <form className="newsletter" onSubmit={handleSubscribe}>
-            <input 
-              type="email" 
-              className="newsletter-input" 
-              placeholder="Enter your email" 
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (subscribeStatus === 'error') setSubscribeStatus('idle');
-              }}
-              disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
-              required
-            />
-            <button 
-              type="submit" 
-              className="btn btn-primary"
-              disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
-            >
-              {subscribeStatus === 'loading' ? 'Subscribing...' : 
-               subscribeStatus === 'success' ? 'Subscribed!' : 'Subscribe'}
-            </button>
-          </form>
-          {subscribeStatus === 'success' && (
-            <p style={{color: 'var(--secondary)', marginTop: '0.5rem', fontWeight: 'bold'}}>
-              Thanks for subscribing! Check your inbox soon. 🚀
-            </p>
-          )}
-          {subscribeStatus === 'error' && (
-            <p style={{color: '#ef4444', marginTop: '0.5rem'}}>
-              Please enter a valid email address.
-            </p>
-          )}
+        {/* 3. Features / How it Works */}
+        <section className="features-section">
+          <div className="container">
+            <h2 className="section-title">How It Works</h2>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">📂</div>
+                <h3>Browse by Category</h3>
+                <p>Easily find skills organized by relevant topics and industries.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">�</div>
+                <h3>Diverse Resources</h3>
+                <p>Access curated videos from YouTube, insightful blogs, and detailed PDFs.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">�</div>
+                <h3>Short Descriptions</h3>
+                <p>Get a quick summary of each resource so you know exactly what you're clicking.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔗</div>
+                <h3>Direct Links</h3>
+                <p>No paywalls or signups here. Just direct links to the original high-quality sources.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">🔄</div>
+                <h3>Updated Regularly</h3>
+                <p>Our library is constantly refreshed with the latest and best learning materials.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📱</div>
+                <h3>Web & Mobile Friendly</h3>
+                <p>Learn on the go with a fully responsive design that works on any device.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Why This Directory Matters */}
+        <section className="why-matters">
+          <div className="container">
+            <div className="why-matters-content">
+              <h2>Why This Directory Matters</h2>
+              <div className="reasons-grid">
+                <div className="reason-item">
+                  <h3>🎯 Quality Over Quantity</h3>
+                  <p>We don't list everything. We only list the best resources that actually help you learn.</p>
+                </div>
+                <div className="reason-item">
+                  <h3>⏱️ Save Valuable Time</h3>
+                  <p>Skip the endless Google searches. Find what you need in seconds.</p>
+                </div>
+                <div className="reason-item">
+                  <h3>🧠 Built for Learners</h3>
+                  <p>Designed to reduce confusion and help you focus on what matters: gaining new skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Final Call to Action */}
+        <section className="final-cta">
+          <div className="container">
+            <h2>Ready to start learning?</h2>
+            <div className="cta-buttons">
+              <Link href="/directory" className="btn btn-primary">
+                Browse Skills
+              </Link>
+            </div>
+          </div>
         </section>
 
         <button
@@ -261,6 +152,6 @@ export default function Home() {
       </main>
       
       <Footer />
-    </>
+    </div>
   );
 }

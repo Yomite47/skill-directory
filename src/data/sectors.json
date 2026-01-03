@@ -5,7 +5,7 @@
       "title": "AI & Automation",
       "intro": "Discover AI tools, automation workflows, and prompt engineering. Learn practical techniques to streamline tasks and boost productivity.",
       "resourcesHeading": "Top AI Channels & Tutorials",
-      "resourcesIntro": "These are some of the best YouTube channels and tutorial videos for learning AI and AI automation. Each entry includes a concise description and a direct link — click Open to explore.",
+      "resourcesIntro": "These are some of the best YouTube channels and tutorial videos for learning AI and AI automation. Each entry includes a concise description and a direct link. Click Open to explore.",
       "resources": [
         {
           "type": "youtube",
@@ -287,7 +287,7 @@
           "type": "youtube",
           "title": "Ben Claremont",
           "link": "https://www.youtube.com/@BenClaremont",
-          "description": "Comprehensive CapCut tutorials for desktop and mobile — from basic edits to advanced effects, shortcuts, and full project workflows for Shorts, Reels, and long-form content.",
+          "description": "Comprehensive CapCut tutorials for desktop and mobile from basic edits to advanced effects, shortcuts, and full project workflows for Shorts, Reels, and long-form content.",
           "logo": "▶️"
         },
         {
@@ -466,14 +466,14 @@
           "type": "twitter",
           "title": "TechCharts",
           "link": "https://x.com/TechCharts",
-          "description": "Aksel Kibar—Classical chartist specializing in technical patterns, breakouts, and historical parallels across crypto markets for objective TA learning.",
+          "description": "Aksel Kibar, Classical chartist specializing in technical patterns, breakouts, and historical parallels across crypto markets for objective TA learning.",
           "logo": "𝕏"
         },
         {
           "type": "twitter",
           "title": "intocryptoverse",
           "link": "https://x.com/intocryptoverse",
-          "description": "Benjamin Cowen—Data-driven TA focused on market cycles, Bitcoin dominance, and risk metrics; teaches probabilistic thinking about price movements.",
+          "description": "Benjamin Cowen, Data-driven TA focused on market cycles, Bitcoin dominance, and risk metrics; teaches probabilistic thinking about price movements.",
           "logo": "𝕏"
         },
         {

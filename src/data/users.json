@@ -4,5 +4,11 @@
     "name": "Ajibade Oluwayomi",
     "email": "olafolarin47@gmail.com",
     "password": "$2b$12$eooQAbCge.FZtXnL7wu0OuUe1KLpJzCeLWKEQEWvxJQDE75GFMFfq"
+  },
+  {
+    "id": "1767346507676",
+    "name": "Test User",
+    "email": "test1767346507384@example.com",
+    "password": "$2b$12$QIJ3Q0UyriqmFVWyWLcz6OoxSML5Ryg5UPUKcbS.racdYnAvP1MyC"
   }
 ]

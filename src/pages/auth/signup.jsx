@@ -48,7 +48,18 @@ export default function Signup() {
         <h1 className="auth-title">Create Account</h1>
         <p className="auth-subtitle">Join the community to access premium resources.</p>
         
-        {error && <div className="auth-error">{error}</div>}
+        {error && (
+          <div className="auth-error">
+            {error}
+            {error.includes('read-only') && (
+              <div className="demo-suggestion">
+                <Link href="/auth/login" className="btn btn-secondary btn-sm" style={{ marginTop: '0.5rem', display: 'inline-block' }}>
+                  Use Demo Account instead
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">

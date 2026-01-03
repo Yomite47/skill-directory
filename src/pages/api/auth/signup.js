@@ -1,6 +1,9 @@
+
 import fs from 'fs';
 import path from 'path';
 import bcrypt from 'bcryptjs';
+import dbConnect from '../../../lib/dbConnect';
+import User from '../../../models/User';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -14,41 +17,69 @@ export default async function handler(req, res) {
   }
 
   try {
-    const filePath = path.join(process.cwd(), 'src', 'data', 'users.json');
-    
-    // Ensure file exists
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, JSON.stringify([]));
-    }
-
-    const fileData = fs.readFileSync(filePath);
-    let users = [];
-    try {
-      users = JSON.parse(fileData);
-    } catch (e) {
-      users = [];
-    }
-
-    const existingUser = users.find(u => u.email === email);
-    if (existingUser) {
-      return res.status(422).json({ message: 'User already exists' });
-    }
+    // Attempt to connect to MongoDB
+    const hasDbConnection = await dbConnect();
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    const newUser = {
-      id: Date.now().toString(),
-      name,
-      email,
-      password: hashedPassword,
-    };
+    if (hasDbConnection) {
+      // Use MongoDB
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(422).json({ message: 'User already exists' });
+      }
 
-    users.push(newUser);
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+      await User.create({
+        name,
+        email,
+        password: hashedPassword,
+      });
 
-    return res.status(201).json({ message: 'User created', user: { name, email } });
+      return res.status(201).json({ message: 'User created', user: { name, email } });
+    } else {
+      // Fallback to local file system (works on localhost, fails on Vercel)
+      const filePath = path.join(process.cwd(), 'src', 'data', 'users.json');
+      
+      // Ensure file exists
+      if (!fs.existsSync(filePath)) {
+        fs.writeFileSync(filePath, JSON.stringify([]));
+      }
+
+      const fileData = fs.readFileSync(filePath);
+      let users = [];
+      try {
+        users = JSON.parse(fileData);
+      } catch (e) {
+        users = [];
+      }
+
+      const existingUser = users.find(u => u.email === email);
+      if (existingUser) {
+        return res.status(422).json({ message: 'User already exists' });
+      }
+
+      const newUser = {
+        id: Date.now().toString(),
+        name,
+        email,
+        password: hashedPassword,
+      };
+
+      users.push(newUser);
+      fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+
+      return res.status(201).json({ message: 'User created', user: { name, email } });
+    }
   } catch (error) {
     console.error('Signup error:', error);
+    
+    // Check for read-only filesystem error (common on Vercel)
+    if (error.code === 'EROFS') {
+      return res.status(503).json({ 
+        message: 'Database not configured and filesystem is read-only. Please set MONGODB_URI in your Vercel project settings.' 
+      });
+    }
+    
     return res.status(500).json({ message: 'Internal server error' });
   }
 }

@@ -81,6 +81,17 @@ export default function Login() {
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
             {loading ? 'Logging in...' : 'Log In'}
           </button>
+
+          <button 
+            type="button" 
+            className="btn btn-secondary btn-block demo-btn"
+            onClick={() => {
+              setEmail('demo@example.com');
+              setPassword('password123');
+            }}
+          >
+            Use Demo Account
+          </button>
         </form>
         
         <p className="auth-footer">
@@ -166,6 +177,17 @@ export default function Login() {
           padding: 1rem;
           font-size: 1.1rem;
           margin-top: 1rem;
+        }
+        .demo-btn {
+          margin-top: 1rem;
+          background: transparent;
+          border: 1px dashed var(--text-light);
+          color: var(--text-light);
+        }
+        .demo-btn:hover {
+          background: rgba(0,0,0,0.05);
+          border-color: var(--primary);
+          color: var(--primary);
         }
         .auth-footer {
           margin-top: 1.5rem;

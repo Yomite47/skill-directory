@@ -1,13 +1,9 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
-import ThemeToggle from './ThemeToggle';
 import { useRouter } from 'next/router';
 
 export default function Header() {
-  const { data: session } = useSession();
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const router = useRouter();
 
@@ -19,32 +15,6 @@ export default function Header() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuOpen && !event.target.closest('.profile-menu-container')) {
-        setMenuOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [menuOpen]);
-
-  function focusSearch() {
-    const el = document.getElementById('skills-search');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.focus();
-    } else {
-      const target = document.getElementById('skills');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      } else if (router.pathname !== '/') {
-        router.push('/#skills');
-      }
-    }
-  }
 
   return (
     <header ref={headerRef} className={`header ${scrolled ? 'scrolled' : ''}`}>
@@ -66,61 +36,9 @@ export default function Header() {
         </div>
         
         <div className="actions-section">
-          {session && (
-            <button className="icon-btn search-btn" aria-label="Search" onClick={focusSearch}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.57-4.23C15.99 6.01 13 3 9.5 3S3 6.01 3 9.5 6.01 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-            </button>
-          )}
-          
-          <ThemeToggle />
-
-          {session ? (
-            <div className="profile-menu-container">
-              <button 
-                className="profile-btn" 
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-expanded={menuOpen}
-                aria-haspopup="true"
-              >
-                <div className="avatar">
-                  {session.user.name ? session.user.name[0].toUpperCase() : 'U'}
-                </div>
-              </button>
-              
-              {menuOpen && (
-                <div className="dropdown-menu">
-                  <div className="dropdown-header">
-                    <div className="user-info">
-                      <div className="user-name">{session.user.name}</div>
-                      <div className="user-email">{session.user.email}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="dropdown-content">
-                    <Link href="/profile" className="dropdown-item" onClick={() => setMenuOpen(false)}>
-                      <span className="icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                      </span>
-                      <span>Edit Profile</span>
-                    </Link>
-                    
-                    <button onClick={() => signOut()} className="dropdown-item logout-btn">
-                      <span className="icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                      </span>
-                      <span>Log Out</span>
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-             <Link href="/auth/login" className="btn-text">
-               Login
-             </Link>
-          )}
+          <div className="animated-cta">
+            Let's Learn Together! 📚
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -134,6 +52,45 @@ export default function Header() {
           display: flex;
           align-items: center;
           gap: 1rem;
+        }
+        .animated-cta {
+          font-weight: 800;
+          font-size: 1.2rem;
+          background: linear-gradient(90deg, #4f46e5, #ec4899, #8b5cf6, #4f46e5);
+          background-size: 300% 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: gradient-move 3s linear infinite, float 3s ease-in-out infinite;
+          white-space: nowrap;
+          padding: 0.5rem 1rem;
+          border-radius: 12px;
+          background-color: rgba(255, 255, 255, 0.5);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        @keyframes gradient-move {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+        .nav-link {
+          text-decoration: none;
+          color: var(--text);
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: color 0.2s;
+          display: none;
+        }
+        .nav-link:hover {
+          color: var(--primary);
+        }
+        @media (min-width: 640px) {
+          .nav-link {
+            display: block;
+          }
         }
         .btn-text {
           background: none;
