@@ -68,17 +68,8 @@ a {
   --glass: rgba(255, 255, 255, 0.7);
 }
 
-html.dark {
-  --primary: #818cf8;
-  --primary-contrast: #0f172a;
-  --secondary: #f472b6;
-  --text: #f8fafc;
-  --text-light: #cbd5e1;
-  --bg: #0f172a;
-  --bg-soft: #1e293b;
-  --border: rgba(255,255,255,0.1);
-  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --glass: rgba(15, 23, 42, 0.8);
+html {
+  color-scheme: light;
 }
 
 body {
@@ -86,9 +77,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   font-size: 16px;
-  background: linear-gradient(-45deg, var(--bg), var(--bg-soft), #f0f9ff, var(--bg-soft));
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
+  background: var(--bg);
 }
 
 .container {
