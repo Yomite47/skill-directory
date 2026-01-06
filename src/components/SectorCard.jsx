@@ -1,13 +1,14 @@
 import Link from 'next/link';
+import { Bot, Clapperboard, Film, TrendingUp, PenTool, BookOpen } from 'lucide-react';
 
 export default function SectorCard({ sector }) {
   function getIcon(slug) {
-    if (slug === 'ai-automation') return '🤖';
-    if (slug === 'video-editing') return '🎬';
-    if (slug === 'animation') return '🌀';
-    if (slug === 'technical-analysis') return '📈';
-    if (slug === 'content-creation-writing') return '✍️';
-    return '📚';
+    if (slug === 'ai-automation') return <Bot size={40} color="#4f46e5" />;
+    if (slug === 'video-editing') return <Clapperboard size={40} color="#4f46e5" />;
+    if (slug === 'animation') return <Film size={40} color="#4f46e5" />;
+    if (slug === 'technical-analysis') return <TrendingUp size={40} color="#4f46e5" />;
+    if (slug === 'content-creation-writing') return <PenTool size={40} color="#4f46e5" />;
+    return <BookOpen size={40} color="#4f46e5" />;
   }
 
   return (

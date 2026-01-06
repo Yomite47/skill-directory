@@ -5,6 +5,7 @@ import { getAllSectorSlugs, getSectorBySlug } from '../../utils/dataLoader';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ResourceCard from '../../components/ResourceCard';
+import { BookOpen } from 'lucide-react';
 
 export async function getStaticPaths() {
   const paths = getAllSectorSlugs();
@@ -47,7 +48,7 @@ export default function SectorPage({ sector }) {
               <p className="sector-intro">{sector.intro}</p>
               <div className="sector-meta">
                 <span className="resource-badge">
-                  📚 {sector.resources?.length || 0} Resources
+                  <BookOpen size={16} style={{display:'inline', marginRight:'4px', verticalAlign:'text-bottom'}} /> {sector.resources?.length || 0} Resources
                 </span>
               </div>
             </div>
