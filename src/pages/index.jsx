@@ -4,16 +4,35 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { 
+  CheckCircle, 
+  FolderOpen, 
+  Layers, 
+  FileText, 
+  Link as LinkIcon, 
+  RefreshCw, 
+  Smartphone, 
+  Target, 
+  Clock, 
+  Brain,
+  ArrowUp
+} from 'lucide-react';
 
 export default function Home() {
   const router = useRouter();
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     function onScroll() {
-      setShowTop(window.scrollY > 400);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowTop(window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
     }
-    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -57,9 +76,9 @@ export default function Home() {
               </div>
               <div className="problem-solution-image">
                 <div className="solution-card">
-                  <div className="check-item">✅ Curated Content</div>
-                  <div className="check-item">✅ No Fluff</div>
-                  <div className="check-item">✅ Direct Links</div>
+                  <div className="check-item"><CheckCircle size={24} className="text-green-500" color="#10b981" /> Curated Content</div>
+                  <div className="check-item"><CheckCircle size={24} className="text-green-500" color="#10b981" /> No Fluff</div>
+                  <div className="check-item"><CheckCircle size={24} className="text-green-500" color="#10b981" /> Direct Links</div>
                 </div>
               </div>
             </div>
@@ -72,32 +91,32 @@ export default function Home() {
             <h2 className="section-title">How It Works</h2>
             <div className="features-grid">
               <div className="feature-card">
-                <div className="feature-icon">📂</div>
+                <div className="feature-icon"><FolderOpen size={40} color="#4f46e5" /></div>
                 <h3>Browse by Category</h3>
                 <p>Easily find skills organized by relevant topics and industries.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">�</div>
+                <div className="feature-icon"><Layers size={40} color="#ec4899" /></div>
                 <h3>Diverse Resources</h3>
                 <p>Access curated videos from YouTube, insightful blogs, and detailed PDFs.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">�</div>
+                <div className="feature-icon"><FileText size={40} color="#8b5cf6" /></div>
                 <h3>Short Descriptions</h3>
                 <p>Get a quick summary of each resource so you know exactly what you're clicking.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">🔗</div>
+                <div className="feature-icon"><LinkIcon size={40} color="#06b6d4" /></div>
                 <h3>Direct Links</h3>
                 <p>No paywalls or signups here. Just direct links to the original high-quality sources.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">🔄</div>
+                <div className="feature-icon"><RefreshCw size={40} color="#f59e0b" /></div>
                 <h3>Updated Regularly</h3>
                 <p>Our library is constantly refreshed with the latest and best learning materials.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">📱</div>
+                <div className="feature-icon"><Smartphone size={40} color="#10b981" /></div>
                 <h3>Web & Mobile Friendly</h3>
                 <p>Learn on the go with a fully responsive design that works on any device.</p>
               </div>
@@ -112,15 +131,15 @@ export default function Home() {
               <h2>Why This Directory Matters</h2>
               <div className="reasons-grid">
                 <div className="reason-item">
-                  <h3>🎯 Quality Over Quantity</h3>
+                  <h3><Target size={24} style={{display:'inline', marginRight:'8px', verticalAlign: 'text-bottom'}} color="#4f46e5"/> Quality Over Quantity</h3>
                   <p>We don't list everything. We only list the best resources that actually help you learn.</p>
                 </div>
                 <div className="reason-item">
-                  <h3>⏱️ Save Valuable Time</h3>
+                  <h3><Clock size={24} style={{display:'inline', marginRight:'8px', verticalAlign: 'text-bottom'}} color="#ec4899"/> Save Valuable Time</h3>
                   <p>Skip the endless Google searches. Find what you need in seconds.</p>
                 </div>
                 <div className="reason-item">
-                  <h3>🧠 Built for Learners</h3>
+                  <h3><Brain size={24} style={{display:'inline', marginRight:'8px', verticalAlign: 'text-bottom'}} color="#8b5cf6"/> Built for Learners</h3>
                   <p>Designed to reduce confusion and help you focus on what matters: gaining new skills.</p>
                 </div>
               </div>
@@ -146,7 +165,7 @@ export default function Home() {
           style={{display: showTop ? 'flex' : 'none'}}
           aria-label="Back to top"
         >
-          ↑
+          <ArrowUp size={24} />
         </button>
       </main>
       

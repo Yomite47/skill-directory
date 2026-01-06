@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
+import { BookOpen } from 'lucide-react';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,9 +10,10 @@ export default function Header() {
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 10);
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 10);
+      });
     }
-    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -37,7 +39,7 @@ export default function Header() {
         
         <div className="actions-section">
           <div className="animated-cta">
-            Let's Learn Together! 📚
+            Let's Learn Together! <BookOpen size={20} style={{ display: 'inline', verticalAlign: 'text-bottom' }} />
           </div>
         </div>
       </div>
