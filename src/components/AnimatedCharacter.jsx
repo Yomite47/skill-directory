@@ -32,7 +32,7 @@ export default function AnimatedCharacter() {
         <div className="character-arm arm-right academic"></div>
       </div>
       <div className="character-bubble">
-        <p>Let's Learn Together! 📚</p>
+        <p>Let's Learn Together! <BookOpen size={16} style={{display:'inline', verticalAlign:'text-bottom'}} /></p>
       </div>
     </div>
   );

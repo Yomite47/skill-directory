@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import ResourceCard from '../components/ResourceCard';
 import skillsData from '../data/skills.json';
 import sectorsData from '../data/sectors.json';
+import { Rocket, ArrowUp } from 'lucide-react';
 
 export default function Directory() {
   const router = useRouter();
@@ -86,10 +87,16 @@ export default function Directory() {
   };
 
   useEffect(() => {
+    let ticking = false;
     function onScroll() {
-      setShowTop(window.scrollY > 400);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowTop(window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
     }
-    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -228,7 +235,7 @@ export default function Directory() {
           </form>
           {subscribeStatus === 'success' && (
             <p style={{color: 'var(--secondary)', marginTop: '1rem', fontWeight: 'bold'}}>
-              Thanks for subscribing! Check your inbox soon. 🚀
+              Thanks for subscribing! Check your inbox soon. <Rocket size={16} style={{display:'inline', verticalAlign:'text-bottom'}} />
             </p>
           )}
           {subscribeStatus === 'error' && (

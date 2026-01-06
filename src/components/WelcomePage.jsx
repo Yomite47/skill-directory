@@ -25,17 +25,17 @@ export default function WelcomePage() {
         
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">🚀</div>
+            <div className="feature-icon"><Rocket size={40} color="#4f46e5" /></div>
             <h3>Curated Paths</h3>
             <p>Step-by-step guides to master complex skills.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">💎</div>
+            <div className="feature-icon"><Gem size={40} color="#ec4899" /></div>
             <h3>Premium Resources</h3>
             <p>Hand-picked tools and assets for your journey.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">🤝</div>
+            <div className="feature-icon"><Handshake size={40} color="#8b5cf6" /></div>
             <h3>Community</h3>
             <p>Connect with like-minded learners.</p>
           </div>
